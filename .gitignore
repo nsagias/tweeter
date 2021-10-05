@@ -2,3 +2,6 @@ server/data-files/
 node_modules/
 .env
 .DS_Store
+app_notes.js
+css_notes.css
+html_notes.html
