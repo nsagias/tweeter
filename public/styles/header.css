@@ -5,6 +5,6 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  position: relative;
+
   background-image: url("/images/asfalt-dark.png");
 }
