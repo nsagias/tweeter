@@ -1,0 +1,35 @@
+
+/* padding: 1.5em; */
+.new-tweet { 
+  display: flex;
+  height: 120px;
+  color: black;
+  font-family: 'Bungee', cursive;
+  padding: 1.5em;
+ 
+
+}
+
+#tweet-text {
+  border-style: none;
+  background-color: #f4f1ec;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.mytweet {
+  display: flex;
+  color: red;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+.btn {
+  color: white;
+  font-family: 'Bungee', cursive;
+  background-color: #4056A1;
+}
+
+.myCounter {
+  align-self:flex-end
+}
