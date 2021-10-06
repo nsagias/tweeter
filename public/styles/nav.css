@@ -1,3 +1,16 @@
-nav {
+nav { 
+  height: 120px;
+  color: #FFFFFF;
+  background-color: #4056A1;
   font-family: 'Bungee', cursive;
+  padding: 1.5em;
+  font-size: 24px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.write {
+  font-family: 'Source Sans Pro', sans-serif;
 }
