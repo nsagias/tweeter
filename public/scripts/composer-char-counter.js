@@ -1,0 +1,1 @@
+console.log('test composer char counter works')
