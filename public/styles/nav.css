@@ -4,9 +4,11 @@ nav {
   background-color: #4056A1;
   font-family: 'Bungee', cursive;
   padding: 1.5em;
-  font-size: 36px;
+  font-size: 30px;
 
 }
+
+
 .navHeader {
   display: flex;
   justify-content: space-between;
@@ -26,13 +28,21 @@ nav {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-header {
+
+.myHeader {
   display: flex;
   background-color: #d89820;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: url("/images/asfalt-dark.png");
 }
 
 .userName {
+  display: flex;
   font-family: 'Source Sans Pro', sans-serif;
+  color: #FFFFFF;
 }
 
   
