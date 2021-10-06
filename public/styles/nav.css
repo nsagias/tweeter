@@ -29,8 +29,10 @@ nav {
 header {
   display: flex;
   background-color: #d89820;
- 
 }
 
+.userName {
+  font-family: 'Source Sans Pro', sans-serif;
+}
 
   
