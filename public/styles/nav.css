@@ -11,6 +11,16 @@ nav {
   justify-content: space-between;
 }
 
-.write {
+.horizontalArrows {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.write1 {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.write2 {
+  display: flex;
+  color: red;
   font-family: 'Source Sans Pro', sans-serif;
 }
