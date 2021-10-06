@@ -19,7 +19,6 @@
 
 .mytweet {
   display: flex;
-  color: red;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -32,4 +31,8 @@
 
 .myCounter {
   align-self:flex-end
+}
+
+.hr1 {
+  border-top: 2px solid black;
 }
