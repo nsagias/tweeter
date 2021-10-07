@@ -1,9 +1,10 @@
 .myHeader {
 
-  height: 400px;
+  height: 600px;
   background-color: #d89820;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-image: url("/images/asfalt-dark.png");
+  padding-top: 50px;
 }

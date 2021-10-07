@@ -22,15 +22,20 @@
   padding: 10px;
   transition: box-shadow .05s;
   box-shadow: 5px 5px 5px rgba(69, 69, 69, 0.5);
- 
+
 }
-#content {
-  border-bottom: 2px solid black;
-}
+
 #tweet-header {
   display:flex;
   justify-content: space-between;
 }
+ 
+
+#content {
+  border-bottom: 2px solid black;
+}
+
+
 #tweet-footer {
   display:flex;
   justify-content: space-between;
