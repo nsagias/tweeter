@@ -8,6 +8,15 @@
 
 // "tweet-text"
 // Textarea
+// $(() => {
+//   $("#tweet-text").keyup( () => { 
+//     console.log($("#tweet-text").val().length);
+//   });
+// });
+
 $(() => {
-  $("#tweet-text").keyup( () => { console.log("test")})
+  $("#tweet-text").keyup( () => { 
+    $('#char-counter').text($("#tweet-text").val().length);
+  });
 });
+
