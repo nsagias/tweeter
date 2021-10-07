@@ -1,0 +1,10 @@
+#tweet-container {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.fas {
+  color: #4056A1;
+}
+.fas:hover {
+  color: #d89820;
+}
