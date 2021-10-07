@@ -8,3 +8,17 @@
 .fas:hover {
   color: #d89820;
 }
+
+#tweet:hover {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 10px 10px 10px rgba(69, 69, 69, 0.5);
+ 
+}
+#content {
+  border-bottom: 2px solid black;
+}
+#tweet-header {
+  display:flex;
+  justify-content: space-between;
+}
