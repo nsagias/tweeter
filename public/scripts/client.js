@@ -39,7 +39,6 @@ const createTweetElement  = (tweetData) => {
   const userHandle = tweetData.user.handle;
   const tweetContent = tweetData.content.text;
   const createdAt = tweetData.created_at;
-  // <div class="timeago" datetime="2016-06-30 09:20:00"></div>
 
   let $tweet = `<article class="tweet">
                 <header class="tweet-header">
