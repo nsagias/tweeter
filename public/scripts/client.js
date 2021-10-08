@@ -50,17 +50,32 @@ const createTweetElement  = (tweetData) => {
     const $header = $('header').addClass("tweet-header");
       const $tweetHeaderLeft = $('div').addClass("tweet-header-left");
       const $tweetHeaderRight = $('div').addClass("tweet-header-right");
-      const $content = $('div').addClass("content");
+    const $content = $('div').addClass("content");
     const $footer = $('div').addClass("tweet-footer");
       const $tweetFooterLeft = $('div').addClass("tweet-footer-left");
       const $tweetFooterRight = $('div').addClass("tweet-footer-right");
-    // end
-
+  
+  // header
+  $tweetHeaderLeft.append($userAvatars, $userName);
+  $tweetHeaderRight.append($userHandle);
+  
+  // content
+  $content.append($tweetContent);
+  
+  // footer   
+  $tweetFooterLeft.append($createdAt);
+  $tweetFooterRight.append($flagIcon, $retweetIcon,$heartIcon);
+  
+  // article
+  $header.append($tweetHeaderLeft, $tweetHeaderRight);
+  $footer.append($tweetFooterLeft, $tweetFooterRight);
+  $article.append($header, $content, $footer);
+   
 
   return tweetData;
 }; 
 
-// $('#tweets-container').append($tweet);
+
 
 
 
