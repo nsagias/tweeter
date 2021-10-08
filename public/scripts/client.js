@@ -4,3 +4,11 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const $tweet = $(`<article class="tweet">Hello world</article>`);
+
+// const createTweetElement  = () => {
+
+// }; 
+
+console.log('this is my tweet',$tweet);
+$('#tweets-container').append($tweet);
