@@ -24,45 +24,56 @@ const tweetData = {
 
   // user.avatars  
   // <div><img src="https://i.imgur.com/73hZDYK.png"></div>
-  const $userAvatars = $('<div>').prepend(`<img src="https://i.imgur.com/73hZDYK.png"></img>`); 
+  // const userAvatars = 
+  // /user.name 
 
-  // // // user.name 
-  // // // <div>Newton</div>
-  const $userName = $('<div>').text(`Newton`);
+  // const userName = 
 
-  // //   // user.handle   
-  const $userHandle = $('<div>').text(`@SirIsaac`);
+  // user.handle   
+  // const userHandle =
 
-  // //   // content.text 
-  const $tweetContent = $('<p>').text(`If I have seen further it is by standing on the shoulders of giants`);
-  
-  // // // <div id="tweet-footer">
-  // // // created_at
-  const $createdAt = $('<div>').text(`10 days ago`);
+  //  content.text 
+  // const tweetContent   
 
-  // // // icons
-  const $flagIcon = $('<div>').text('<i class="fas fa-flag"></i>');
-  const $retweetIcon = $('<div>').text('<i class="fas fa-retweet></i>');
-  const $heartIcon = $('<div>').text(`i class="fas fa-heart"></i><sup>${1}</sup>`);
-  
-  // // article 
-  // const $article = $('article').addClass("tweet");
-  //   const $header = $('header').addClass("tweet-header");
-  //     const $tweetHeaderLeft = $('div').addClass("tweet-header-left");
-  //     const $tweetHeaderRight = $('div').addClass("tweet-header-right");
-  //   const $content = $('div').addClass("content");
-  //   const $footer = $('div').addClass("tweet-footer");
-  //     const $tweetFooterLeft = $('div').addClass("tweet-footer-left");
-  //     const $tweetFooterRight = $('div').addClass("tweet-footer-right");
-  
+  // created_at
+  // const createdAt 
+
+  //  icons
+  // const flagIcon = <i class="fas fa-flag"></i>';
+  // const retweetIcon = <i class="fas fa-retweet></i>';
+  // const heartIcon = `<i class="fas fa-heart"></i><sup>${1}</sup>`;
+
+  const $tweet = `<article class="tweet">
+                <header class="tweet-header">
+                  <div class="tweet-header-left">
+                    <div><img src=${"https://i.imgur.com/73hZDYK.png"}></div>
+                    <div>${"Newton"}</div>
+                  </div>
+                  <div class="tweet-header-right">
+                    <div>${"@SirIsaac"}</div>
+                  </div>
+              </header>
+              <div class="content">
+                <p>${"If I have seen further it is by standing on the shoulders of giants"}</p>
+              </div>
+                <div class="tweet-footer">
+                  <div class="tweet-footer-left">
+                    <div>${"10 days ago"}</div>
+                  </div>
+                  <div class="tweet-footer-right">
+                    <div><i class="fas fa-flag"></i></div>
+                    <div><i class="fas fa-retweet"></i></div>
+                    <div><i class="fas fa-heart"></i><sup>${1}</sup></div>
+                  </div>
+              </div>
+              </article>`;
+
 
 // const $tweet = createTweetElement(tweetData);
 
-// Test / driver code (temporary)
-// const $tweet = $('article').addClass("tweet")
 
 // works
 // const $tweet = $('article').text('hello world')
-console.log($article); // to see what it looks like
+console.log($tweet); // to see what it looks like
 // $('#tweets-container').append($userAvatars, $userName, $userHandle); 
-$('#tweets-container').append($article); 
+$('#tweets-container').append($tweet); 
