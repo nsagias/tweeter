@@ -42,12 +42,12 @@
 }
 
 
-#content {
+.content {
   border-bottom: 2px solid black;
 }
 
 
-#tweet-footer {
+.tweet-footer {
   display:flex;
   justify-content: space-between;
 }
