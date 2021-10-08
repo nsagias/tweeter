@@ -7,6 +7,11 @@
 
 $( () => {
 
+  $.getJSON( "/tweets", function( data ) {
+    console.log('this data',data);
+   
+  });
+
   const data = [
     {
       "user": {
@@ -84,7 +89,11 @@ renderTweets(data);
   $form.submit(function(event) {
     event.preventDefault();
     const serializedData = $(this).serialize();
-    console.log(serializedData);
+    console.log('form was submitted');
+
+    $.post("/tweets", serializedData, (resp) => {
+
+    });
   });
 
 }); 
