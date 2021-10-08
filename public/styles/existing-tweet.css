@@ -29,7 +29,18 @@
   display:flex;
   justify-content: space-between;
 }
- 
+
+.tweet-header-left {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px;
+}
+.tweet-header-right {
+  display:flex;
+  align-items: center;
+}
+
 
 #content {
   border-bottom: 2px solid black;
