@@ -3,28 +3,32 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-// const $tweetsContainer = $('#tweets-container');
-// let data;
+
 
 $( () => {
-  const fetchTweets = () => {
+
+
     $.ajax({
       url: "/tweets",
       method: "GET",
       datatype: "json",
-      success: (data) => {
-        console.log("tweets", data);
-        // const $tweetsContainer = $('#tweets-container');
-        // data = $tweetsContainer.append(tweets);
-
+      success: (tweets) => {
+        // tweets is an array
+        console.log("tweets", tweets);
+        // console.log("single tweet", tweets[0]);
+        const $singleTweet = tweets[0];
+        const $tweet = createTweetElement($singleTweet);
+        console.log($tweet);
+        const $tweetContainer = ('#tweets-container');
+        // $('#tweets-container').empty();
+        // $tweetContainer.append($tweet)
       },
       error: (err) => {
         console.log(`There was an error: ${err}`);
       }
-
     });
-    return data;
-  };
+
+ 
 
 
 
@@ -99,15 +103,16 @@ const createTweetElement  = (tweetData) => {
   return $tweet;
 };
 
-const renderTweets = function(tweets) {
-  $('#tweets-container').empty();
-  for (let tweet of tweets) {
-    let $tweet = createTweetElement(tweet);
-    $('#tweets-container').append($tweet); 
-  }
-}
+// const renderTweets = function(tweets) {
+//   $('#tweets-container').empty();
+//   for (let tweet of tweets) {
+//     let $tweet = createTweetElement(tweet);
+//     $('#tweets-container').append($tweet); 
+//   }
+// }
 
-renderTweets(data);
+
+// renderTweets(data);
 
 
   const $form = $("#form-new-tweet");
@@ -117,7 +122,6 @@ renderTweets(data);
     console.log('form was submitted');
 
     $.post("/tweets", serializedData, (resp) => {
-      fetchTweets();
 
     });
   });
