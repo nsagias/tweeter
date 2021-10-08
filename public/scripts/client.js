@@ -5,6 +5,7 @@
  */
 
 
+$( () => {
 const tweetData = {
   "user": {
     "name": "Newton",
@@ -23,8 +24,9 @@ const createTweetElement  = (tweetData) => {
   const userHandle = tweetData.user.handle;
   const tweetContent = tweetData.content.text;
   const createdAt = tweetData.created_at;
+  // <div class="timeago" datetime="2016-06-30 09:20:00"></div>
 
-  const tweet = `<article class="tweet">
+  const $tweet = `<article class="tweet">
                 <header class="tweet-header">
                   <div class="tweet-header-left">
                     <div><img src=${userAvatars}></div>
@@ -39,7 +41,7 @@ const createTweetElement  = (tweetData) => {
               </div>
                 <div class="tweet-footer">
                   <div class="tweet-footer-left">
-                    <div>${createdAt}</div>
+                    <div>${timeago.format(createdAt)}</div>
                   </div>
                   <div class="tweet-footer-right">
                     <div><i class="fas fa-flag"></i></div>
@@ -48,11 +50,13 @@ const createTweetElement  = (tweetData) => {
                   </div>
               </div>
               </article>`;
-  return tweet;
+  return $tweet;
 
 };
+
 const $tweet = createTweetElement(tweetData);
 
 console.log($tweet); // to see what it looks like
 // $('#tweets-container').append($userAvatars, $userName, $userHandle); 
 $('#tweets-container').append($tweet); 
+}); 
