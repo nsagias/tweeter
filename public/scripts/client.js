@@ -6,17 +6,32 @@
 
 
 $( () => {
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac1"
+
+  const data = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png"
+        ,
+        "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1461116232227
     },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
-}
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd" },
+      "content": {
+        "text": "Je pense , donc je suis"
+      },
+      "created_at": 1461113959088
+    }
+  ]
+
 
 const createTweetElement  = (tweetData) => {
   const userName = tweetData.user.name;
@@ -26,7 +41,7 @@ const createTweetElement  = (tweetData) => {
   const createdAt = tweetData.created_at;
   // <div class="timeago" datetime="2016-06-30 09:20:00"></div>
 
-  const $tweet = `<article class="tweet">
+  let $tweet = `<article class="tweet">
                 <header class="tweet-header">
                   <div class="tweet-header-left">
                     <div><img src=${userAvatars}></div>
@@ -51,12 +66,16 @@ const createTweetElement  = (tweetData) => {
               </div>
               </article>`;
   return $tweet;
-
 };
 
-const $tweet = createTweetElement(tweetData);
+const renderTweets = function(tweets) {
+  for (let tweet of tweets) {
+    let $tweet = createTweetElement(tweet);
+    $('#tweets-container').append($tweet); 
+  }
+}
 
-console.log($tweet); // to see what it looks like
-// $('#tweets-container').append($userAvatars, $userName, $userHandle); 
-$('#tweets-container').append($tweet); 
+
+renderTweets(data);
+
 }); 
