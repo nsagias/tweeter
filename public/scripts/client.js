@@ -77,4 +77,11 @@ const renderTweets = function(tweets) {
 
 renderTweets(data);
 
+
+  const $form = $("#form-new-tweet");
+  $form.submit(function(event) {
+    event.preventDefault();
+    console.log('bingo');
+  });
+
 }); 
