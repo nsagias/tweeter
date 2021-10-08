@@ -51,3 +51,7 @@
   display:flex;
   justify-content: space-between;
 }
+
+.tweet-footer-right {
+  display:flex;
+}
