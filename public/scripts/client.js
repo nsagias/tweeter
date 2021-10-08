@@ -4,15 +4,12 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// const $tweet = $(`<article class="tweet">Hello world</article>`);
 
-
-// Test / driver code (temporary). Eventually will get this from the server.
 const tweetData = {
   "user": {
     "name": "Newton",
     "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+    "handle": "@SirIsaac1"
     },
   "content": {
       "text": "If I have seen further it is by standing on the shoulders of giants"
@@ -20,45 +17,29 @@ const tweetData = {
   "created_at": 1461116232227
 }
 
-// const createTweetElement  = (tweetData) => {
+const createTweetElement  = (tweetData) => {
+  const userName = tweetData.user.name;
+  const userAvatars = tweetData.user.avatars;
+  const userHandle = tweetData.user.handle;
+  const tweetContent = tweetData.content.text;
+  const createdAt = tweetData.created_at;
 
-  // user.avatars  
-  // <div><img src="https://i.imgur.com/73hZDYK.png"></div>
-  // const userAvatars = 
-  // /user.name 
-
-  // const userName = 
-
-  // user.handle   
-  // const userHandle =
-
-  //  content.text 
-  // const tweetContent   
-
-  // created_at
-  // const createdAt 
-
-  //  icons
-  // const flagIcon = <i class="fas fa-flag"></i>';
-  // const retweetIcon = <i class="fas fa-retweet></i>';
-  // const heartIcon = `<i class="fas fa-heart"></i><sup>${1}</sup>`;
-
-  const $tweet = `<article class="tweet">
+  const tweet = `<article class="tweet">
                 <header class="tweet-header">
                   <div class="tweet-header-left">
-                    <div><img src=${"https://i.imgur.com/73hZDYK.png"}></div>
-                    <div>${"Newton"}</div>
+                    <div><img src=${userAvatars}></div>
+                    <div>${userName}</div>
                   </div>
                   <div class="tweet-header-right">
-                    <div>${"@SirIsaac"}</div>
+                    <div>${userHandle}</div>
                   </div>
               </header>
               <div class="content">
-                <p>${"If I have seen further it is by standing on the shoulders of giants"}</p>
+                <p>${tweetContent}</p>
               </div>
                 <div class="tweet-footer">
                   <div class="tweet-footer-left">
-                    <div>${"10 days ago"}</div>
+                    <div>${createdAt}</div>
                   </div>
                   <div class="tweet-footer-right">
                     <div><i class="fas fa-flag"></i></div>
@@ -67,13 +48,11 @@ const tweetData = {
                   </div>
               </div>
               </article>`;
+  return tweet;
 
+};
+const $tweet = createTweetElement(tweetData);
 
-// const $tweet = createTweetElement(tweetData);
-
-
-// works
-// const $tweet = $('article').text('hello world')
 console.log($tweet); // to see what it looks like
 // $('#tweets-container').append($userAvatars, $userName, $userHandle); 
 $('#tweets-container').append($tweet); 
