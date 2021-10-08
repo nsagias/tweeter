@@ -3,15 +3,32 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
+// const $tweetsContainer = $('#tweets-container');
+// let data;
 
 $( () => {
+  // const fetchTweets = () => {
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+      datatype: "json",
+      success: (tweets) => {
+        console.log("tweets", tweets);
+        // const $tweetsContainer = $('#tweets-container');
+        // data = $tweetsContainer.append(tweets);
 
-  $.getJSON( "/tweets", function( data ) {
-    console.log('this data',data);
+      },
+      error: (err) => {
+        console.log(`There was an error: ${err}`);
+      }
+
+    });
+  //   return data;
+  // };
+
+  // fetchTweets();
+
    
-  });
-
   const data = [
     {
       "user": {
@@ -73,8 +90,8 @@ const createTweetElement  = (tweetData) => {
 };
 
 const renderTweets = function(tweets) {
-  let $tweestContainer = $('#tweets-container');
-  $tweestContainer.empty();
+ 
+  $tweetsContainer.empty();
   for (let tweet of tweets) {
     let $tweet = createTweetElement(tweet);
     $('#tweets-container').append($tweet); 
