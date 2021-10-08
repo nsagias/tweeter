@@ -68,6 +68,8 @@ const createTweetElement  = (tweetData) => {
 };
 
 const renderTweets = function(tweets) {
+  let $tweestContainer = $('#tweets-container');
+  $tweestContainer.empty();
   for (let tweet of tweets) {
     let $tweet = createTweetElement(tweet);
     $('#tweets-container').append($tweet); 
@@ -81,7 +83,8 @@ renderTweets(data);
   const $form = $("#form-new-tweet");
   $form.submit(function(event) {
     event.preventDefault();
-    console.log('bingo');
+    const serializedData = $(this).serialize();
+    console.log(serializedData);
   });
 
 }); 
