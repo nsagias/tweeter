@@ -22,24 +22,21 @@ const tweetData = {
 
 const createTweetElement  = (tweetData) => {
 
-  
-  // <article class="tweet">
-  // const $header = $('header').addClass("tweet-header")
-  //   <header class="tweet-header"></header>
-          user.name 
-          user.avatars 
-      // const $tweet = $('div').addClass("tweet-header-left")
-      //  <div class="tweet-header-left">
-      //     <div><img src="https://i.imgur.com/73hZDYK.png"></div>
-      //     <div>Newton</div>
-      //  </div>
-      // const $tweet = $('div').addClass("tweet-header-right")
-         // const $tweet = $('div').addClass("tweet-header-left")
-          user.handle // <div class="tweet-header-right">@SirIsaac</div>
-          content.text // <div id="content"> <p>
+          // user.name 
+          // user.avatars 
+        // <div><img src="https://i.imgur.com/73hZDYK.png"></div>
+        const $userAvatars = $('<div>').text(`<img src="https://i.imgur.com/73hZDYK.png"></img>`); 
+        // <div>Newton</div>
+        const $userName = $('<div>').text(`Newton`);
+
+          // user.handle   
+        const $userHandle = $('<div>').text(`@SirIsaac`);
+
+          content.text 
           //  <div id="content">
           //    <p >"If I have seen further it is by standing on the shoulders of giants"</p>
           //  </div>
+          const $tweetContent = $('<p>').text(`If I have seen further it is by standing on the shoulders of giants`);
         // <div id="tweet-footer">
               created_at // <div>
         //   <div>10 days ago</div>
@@ -58,34 +55,12 @@ const createTweetElement  = (tweetData) => {
           const $footer = $('div').addClass("tweet-footer");
             const $tweetFooterLeft = $('div').addClass("tweet-footer-left");
             const $tweetFooterRight = $('div').addClass("tweet-footer-right");
-
+         // end
 
 
   return tweetData;
 }; 
 
-
-{/* <article class="tweet">
-<header class="tweet-header">
-  <div class="tweet-header-left">
-    <div><img src="https://i.imgur.com/73hZDYK.png"></div>
-    <div>Newton</div>
-  </div>
-  <div class="tweet-header-right">@SirIsaac</div>
-</header>
-<div id="content">
- <p>"If I have seen further it is by standing on the shoulders of giants"</p>
-</div>
-<div id="tweet-footer">
-  <div>10 days ago</div>
-  <div class="tweet-footer-right">
-    <div><i class="fas fa-flag"></i></div>
-    <div><i class="fas fa-retweet"></i></div>
-    <div><i class="fas fa-heart"></i><sup>1</sup></div>
-  </div>
-</div>
-</article> */}
-// console.log('this is my tweet',$tweet);
 // $('#tweets-container').append($tweet);
 
 
