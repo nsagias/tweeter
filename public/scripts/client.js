@@ -7,13 +7,13 @@
 // let data;
 
 $( () => {
-  // const fetchTweets = () => {
+  const fetchTweets = () => {
     $.ajax({
       url: "/tweets",
       method: "GET",
       datatype: "json",
-      success: (tweets) => {
-        console.log("tweets", tweets);
+      success: (data) => {
+        console.log("tweets", data);
         // const $tweetsContainer = $('#tweets-container');
         // data = $tweetsContainer.append(tweets);
 
@@ -23,10 +23,10 @@ $( () => {
       }
 
     });
-  //   return data;
-  // };
+    return data;
+  };
 
-  // fetchTweets();
+
 
    
   const data = [
@@ -51,6 +51,16 @@ $( () => {
         "text": "Je pense , donc je suis"
       },
       "created_at": 1461113959088
+    },
+    {
+      "user": {
+        "name": "Seinfeld",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@masterOfMyDomain" },
+      "content": {
+        "text": "I'm out!"
+      },
+      "created_at": 1461113959089
     }
   ]
 
@@ -90,14 +100,12 @@ const createTweetElement  = (tweetData) => {
 };
 
 const renderTweets = function(tweets) {
- 
-  $tweetsContainer.empty();
+  $('#tweets-container').empty();
   for (let tweet of tweets) {
     let $tweet = createTweetElement(tweet);
     $('#tweets-container').append($tweet); 
   }
 }
-
 
 renderTweets(data);
 
@@ -109,6 +117,7 @@ renderTweets(data);
     console.log('form was submitted');
 
     $.post("/tweets", serializedData, (resp) => {
+      fetchTweets();
 
     });
   });
