@@ -17,13 +17,13 @@ $( () => {
         console.log("tweets", tweetData);
         console.log("single tweet",tweetData[0]);
         const $allTweets = tweetData;
-        const $singleTweet = tweetData[0];
-        const $tweet = createTweetElement($singleTweet);
+        // const $singleTweet = tweetData[0];
+        // const $tweet = createTweetElement($singleTweet);
         // console.log($singleTweet);
-        const $tweetContainer = $('#tweets-container');
-        // renderTweets($tweet)
-        $('#tweets-container').empty();
-        $tweetContainer.append($tweet)
+        // const $tweetContainer = $('#tweets-container');
+        // $('#tweets-container').empty();
+        // $tweetContainer.append($tweet);
+        renderTweets($allTweets);
       },
       error: (err) => {
         console.log(`There was an error: ${err}`);
@@ -109,12 +109,11 @@ const renderTweets = function(tweets) {
 }
 
 
-// renderTweets(data);
-
 
   const $form = $("#form-new-tweet");
   $form.submit(function(event) {
     event.preventDefault();
+    console.log('this is this',this);
     const serializedData = $(this).serialize();
     console.log('form was submitted');
 
