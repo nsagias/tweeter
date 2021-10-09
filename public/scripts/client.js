@@ -7,23 +7,24 @@
 
 $(() => {
 
-
-  $.ajax({
-    url: "/tweets",
-    method: "GET",
-    datatype: "json",
-    success: (tweetData) => {
-      // tweets is an array
-      console.log("tweets", tweetData);
-      console.log("single tweet", tweetData[0]);
-      const $allTweets = tweetData;
-      renderTweets($allTweets);
-    },
-    error: (err) => {
-      console.log(`There was an error: ${err}`);
-    }
-  });
-
+  const loadTweets = () => {
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+      datatype: "json",
+      success: (tweetData) => {
+        // tweets is an array
+        console.log("tweets", tweetData);
+        console.log("single tweet", tweetData[0]);
+        const $allTweets = tweetData;
+        renderTweets($allTweets);
+      },
+      error: (err) => {
+        console.log(`There was an error: ${err}`);
+      }
+    });
+  }
+  loadTweets();
   const data = [
     {
       "user": {
@@ -100,7 +101,7 @@ $(() => {
     $('#tweets-container').empty();
     for (let tweet of tweets) {
       let $tweet = createTweetElement(tweet);
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     }
   }
 
@@ -110,6 +111,7 @@ $(() => {
     // console.log('mytweet legnth', $("#tweet-text").val().length);
     // trim space from form, pop alert 
     const $tweetText = $.trim($("#tweet-text").val());
+    
     if ($tweetText === "") {
       console.log('empty string');
       alert('Please enter something')
@@ -124,8 +126,9 @@ $(() => {
 
     $.post("/tweets", serializedData, (resp) => {
       console.log('form was submitted');
+      loadTweets();
     });
-
+    
   });
 
 });
