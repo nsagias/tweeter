@@ -11,6 +11,10 @@
   justify-content: center;
 
 }
+#form-new-tweet {
+  width: 589px;
+}
+
 
 #tweet-text {
   

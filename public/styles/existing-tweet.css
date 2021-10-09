@@ -44,6 +44,7 @@
 
 .content {
   border-bottom: 2px solid black;
+  overflow-wrap: anywhere;
 }
 
 
