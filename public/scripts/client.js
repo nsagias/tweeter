@@ -12,26 +12,23 @@ $( () => {
       url: "/tweets",
       method: "GET",
       datatype: "json",
-      success: (tweets) => {
+      success: (tweetData) => {
         // tweets is an array
-        console.log("tweets", tweets);
-        // console.log("single tweet", tweets[0]);
-        const $singleTweet = tweets[0];
+        console.log("tweets", tweetData);
+        console.log("single tweet",tweetData[0]);
+        const $allTweets = tweetData;
+        const $singleTweet = tweetData[0];
         const $tweet = createTweetElement($singleTweet);
-        console.log($tweet);
-        const $tweetContainer = ('#tweets-container');
-        // $('#tweets-container').empty();
-        // $tweetContainer.append($tweet)
+        // console.log($singleTweet);
+        const $tweetContainer = $('#tweets-container');
+        // renderTweets($tweet)
+        $('#tweets-container').empty();
+        $tweetContainer.append($tweet)
       },
       error: (err) => {
         console.log(`There was an error: ${err}`);
       }
     });
-
- 
-
-
-
    
   const data = [
     {
@@ -66,50 +63,50 @@ $( () => {
       },
       "created_at": 1461113959089
     }
-  ];
+  ]
 
 
-  const createTweetElement  = (tweetData) => {
-    const userName = tweetData.user.name;
-    const userAvatars = tweetData.user.avatars;
-    const userHandle = tweetData.user.handle;
-    const tweetContent = tweetData.content.text;
-    const createdAt = tweetData.created_at;
+const createTweetElement  = function(tweetData) {
+  // const userName = tweetData.user.name;
+  // const userAvatars = tweetData.user.avatars;
+  // const userHandle = tweetData.user.handle;
+  // const tweetContent = tweetData.content.text;
+  // const createdAt = tweetData.created_at;
 
-    let $tweet = `<article class="tweet">
-                  <header class="tweet-header">
-                    <div class="tweet-header-left">
-                      <div><img src=${userAvatars}></div>
-                      <div>${userName}</div>
-                    </div>
-                    <div class="tweet-header-right">
-                      <div>${userHandle}</div>
-                    </div>
-                </header>
-                <div class="content">
-                  <p>${tweetContent}</p>
-                </div>
-                  <div class="tweet-footer">
-                    <div class="tweet-footer-left">
-                      <div>${timeago.format(createdAt)}</div>
-                    </div>
-                    <div class="tweet-footer-right">
-                      <div><i class="fas fa-flag"></i></div>
-                      <div><i class="fas fa-retweet"></i></div>
-                      <div><i class="fas fa-heart"></i><sup>${1}</sup></div>
-                    </div>
-                </div>
-                </article>`;
-    return $tweet;
-  };
+  let $tweet = $(`<article class="tweet">
+                <header class="tweet-header">
+                  <div class="tweet-header-left">
+                    <div><img src=${tweetData.user.avatars}></div>
+                    <div>${tweetData.user.name}</div>
+                  </div>
+                  <div class="tweet-header-right">
+                    <div>${tweetData.user.handle}</div>
+                  </div>
+              </header>
+              <div class="content">
+                <p>${tweetData.content.text}</p>
+              </div>
+                <div class="tweet-footer">
+                  <div class="tweet-footer-left">
+                    <div>${timeago.format(tweetData.created_at)}</div>
+                  </div>
+                  <div class="tweet-footer-right">
+                    <div><i class="fas fa-flag"></i></div>
+                    <div><i class="fas fa-retweet"></i></div>
+                    <div><i class="fas fa-heart"></i><sup>${1}</sup></div>
+                  </div>
+              </div>
+              </article>`);
+  return $tweet;
+};
 
-// const renderTweets = function(tweets) {
-//   $('#tweets-container').empty();
-//   for (let tweet of tweets) {
-//     let $tweet = createTweetElement(tweet);
-//     $('#tweets-container').append($tweet); 
-//   }
-// }
+const renderTweets = function(tweets) {
+  $('#tweets-container').empty();
+  for (let tweet of tweets) {
+    let $tweet = createTweetElement(tweet);
+    $('#tweets-container').append($tweet);
+  }
+}
 
 
 // renderTweets(data);
