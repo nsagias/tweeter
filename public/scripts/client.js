@@ -5,31 +5,25 @@
  */
 
 
-$( () => {
+$(() => {
 
 
-    $.ajax({
-      url: "/tweets",
-      method: "GET",
-      datatype: "json",
-      success: (tweetData) => {
-        // tweets is an array
-        console.log("tweets", tweetData);
-        console.log("single tweet",tweetData[0]);
-        const $allTweets = tweetData;
-        // const $singleTweet = tweetData[0];
-        // const $tweet = createTweetElement($singleTweet);
-        // console.log($singleTweet);
-        // const $tweetContainer = $('#tweets-container');
-        // $('#tweets-container').empty();
-        // $tweetContainer.append($tweet);
-        renderTweets($allTweets);
-      },
-      error: (err) => {
-        console.log(`There was an error: ${err}`);
-      }
-    });
-   
+  $.ajax({
+    url: "/tweets",
+    method: "GET",
+    datatype: "json",
+    success: (tweetData) => {
+      // tweets is an array
+      console.log("tweets", tweetData);
+      console.log("single tweet", tweetData[0]);
+      const $allTweets = tweetData;
+      renderTweets($allTweets);
+    },
+    error: (err) => {
+      console.log(`There was an error: ${err}`);
+    }
+  });
+
   const data = [
     {
       "user": {
@@ -47,7 +41,8 @@ $( () => {
       "user": {
         "name": "Descartes",
         "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
+        "handle": "@rd"
+      },
       "content": {
         "text": "Je pense , donc je suis"
       },
@@ -57,7 +52,8 @@ $( () => {
       "user": {
         "name": "Seinfeld",
         "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@masterOfMyDomain" },
+        "handle": "@masterOfMyDomain"
+      },
       "content": {
         "text": "I'm out!"
       },
@@ -66,14 +62,14 @@ $( () => {
   ]
 
 
-const createTweetElement  = function(tweetData) {
-  // const userName = tweetData.user.name;
-  // const userAvatars = tweetData.user.avatars;
-  // const userHandle = tweetData.user.handle;
-  // const tweetContent = tweetData.content.text;
-  // const createdAt = tweetData.created_at;
+  const createTweetElement = function (tweetData) {
+    // const userName = tweetData.user.name;
+    // const userAvatars = tweetData.user.avatars;
+    // const userHandle = tweetData.user.handle;
+    // const tweetContent = tweetData.content.text;
+    // const createdAt = tweetData.created_at;
 
-  let $tweet = $(`<article class="tweet">
+    let $tweet = $(`<article class="tweet">
                 <header class="tweet-header">
                   <div class="tweet-header-left">
                     <div><img src=${tweetData.user.avatars}></div>
@@ -97,29 +93,39 @@ const createTweetElement  = function(tweetData) {
                   </div>
               </div>
               </article>`);
-  return $tweet;
-};
+    return $tweet;
+  };
 
-const renderTweets = function(tweets) {
-  $('#tweets-container').empty();
-  for (let tweet of tweets) {
-    let $tweet = createTweetElement(tweet);
-    $('#tweets-container').append($tweet);
+  const renderTweets = function (tweets) {
+    $('#tweets-container').empty();
+    for (let tweet of tweets) {
+      let $tweet = createTweetElement(tweet);
+      $('#tweets-container').append($tweet);
+    }
   }
-}
 
-
-
-  const $form = $("#form-new-tweet");
-  $form.submit(function(event) {
+  
+  const $form = $("#form-new-tweet")
+  $form.submit(function (event) {
+    // console.log('mytweet legnth', $("#tweet-text").val().length);
+    // trim space from form, pop alert 
+    const $tweetText = $.trim($("#tweet-text").val());
+    if ($tweetText === "") {
+      console.log('empty string');
+      alert('Please enter something')
+    }
+    if ($tweetText === null) {
+      console.log('null');
+    }
     event.preventDefault();
-    console.log('this is this',this);
+    // serialize input 
     const serializedData = $(this).serialize();
-    console.log('form was submitted');
+    
 
     $.post("/tweets", serializedData, (resp) => {
-
+      console.log('form was submitted');
     });
+
   });
 
-}); 
+});
