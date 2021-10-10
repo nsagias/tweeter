@@ -35,14 +35,14 @@ nav {
 }
 
 
-.myHeader {
+/* .myHeader {
   display: flex;
   background-color: #d89820;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-}
+} */
 
 .userName {
   display: flex;

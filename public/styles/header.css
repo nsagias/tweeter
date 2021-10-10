@@ -1,10 +1,18 @@
 .myHeader {
-
-  height: 600px;
+  display: flex;
+  height: 500px;
   background-color: #d89820;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-image: url("/images/asfalt-dark.png");
   padding-top: 50px;
+  padding-left: 25x; 
+  padding-right: 25px;
+  margin-top: 200px;
+  margin-left: 120px;
+  margin-right: 120px;
+  width: 50%;
+  z-index:100;
 }
+
