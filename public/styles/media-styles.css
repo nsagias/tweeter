@@ -21,10 +21,7 @@
   .double-arrow:hover{ 
     color: #4056A1;  
   }   
-}
 
-
-@media screen and (max-width: 768px) {
   .myHeader { display: none;  }  
   .nav-header-splash{
     display: flex;
