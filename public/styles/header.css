@@ -10,9 +10,12 @@
   padding-left: 25x; 
   padding-right: 25px;
   margin-top: 200px;
-  margin-left: 120px;
-  margin-right: 120px;
+  margin-left: 80px;
+  margin-right: 20px;
   width: 50%;
   z-index:100;
 }
 
+.splash {
+  padding-left: 20px;
+}
