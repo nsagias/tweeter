@@ -16,13 +16,12 @@
   .nav { display: none; }
 
   main {
-    /* display: flex;  */
     width: 90%;
     background-color: #f4f1ec;
     align-self: center;
     justify-content: center;
     margin: 0 auto;
     padding-right: 50px;
-    padding-top: 100vh;
+    padding-top: 50vh;
   }
 }
