@@ -8,7 +8,7 @@
   background-image: url("/images/asfalt-dark.png");
   padding-top: 50px;
   padding-left: 25x; 
-  padding-right: 25px;
+  padding-right: 25px;  
   margin-top: 200px;
   margin-left: 80px;
   margin-right: 20px;
@@ -16,10 +16,78 @@
   z-index:100;
 }
 
+.splash-media {
+  padding-left: 20px;
+  
+}
+
 .splash {
   padding-left: 20px;
 }
 
+.nav-header-user {
+  display: none;
+  display: flex;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #FFFFFF;  
+}
+
+.nav-header-splash{
+  display: none;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .myHeader { display: none;  }  
+  .nav-header-splash{
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+  }
+  
+  .nav-header-user {
+    display: flex;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #FFFFFF;  
+  }
+}
+/* 
+A typical breakpoint to consider for 
+desktop is 1024px and above.
+Tablets are commonly between 768px to 1024px.
+    display: none;
+@media screen and (max-width: 768px) {
+  .splash-media { display: block;  }   
+}
+
+@media screen and (min-width: 401px) and (max-width: 1024px) {
+  .splash-media { display: none; }  
+} */
+
+/* /nav
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 500px; 
+  */
+
+/* this is for media queries
+.nav-header-splash{
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+}
+
+.nav-header-user {
+  display: flex;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #FFFFFF;
+} */
 
 /* logic */
 /* background header becomes full header */
@@ -48,7 +116,7 @@
 
 
 /*media queries*/
-/* nav */
+/* nav.css */
 /* 
 height: 500px;
 color: #FFFFFF;
@@ -63,6 +131,17 @@ z-index: 999;
 top: 0;
 width: 100%; 
 */
+
+/* nav.css, revise mouse over */
+/*  
+
+.double-arrow:hover {
+this is blue revise on hover to be blue
+  
+  color: #4056A1;
+} */
+
+
 /* make header class woerk with the above reviesd media queries */
 /* <header class="myHeader">
 <div class="splash">

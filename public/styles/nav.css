@@ -36,15 +36,34 @@ nav {
   color: red;
   font-family: 'Source Sans Pro', sans-serif;
 }
-
 .double-arrow:hover {
   color: #d89820;
 }
-
 .userName {
   display: flex;
   font-family: 'Source Sans Pro', sans-serif;
   color: #FFFFFF;
 }
 
+
+@media screen and (max-width: 768px) {
+  .nav {
+    height: 500px;
+    color: #FFFFFF;
+    background-color: #d89820;
+    background-color: none;
+    font-family: 'Bungee', cursive;
+    background-image: url("/images/asfalt-dark.png");
+    padding: 1.5em;
+    font-size: 30px;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    width: 100%; 
+
+  }
+  .double-arrow{ 
+    color: #4056A1;  
+  }   
+}
   
