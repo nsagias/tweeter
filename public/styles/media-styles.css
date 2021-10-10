@@ -1,0 +1,28 @@
+@media screen and (max-width: 768px) {
+  .myHeader { display: none;  }  
+  .nav-header-splash{
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+  }
+  
+  .nav-header-user {
+    display: flex;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #FFFFFF;  
+  }
+
+  .nav { display: none; }
+
+  main {
+    /* display: flex;  */
+    width: 90%;
+    background-color: #f4f1ec;
+    align-self: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding-right: 50px;
+    padding-top: 100vh;
+  }
+}

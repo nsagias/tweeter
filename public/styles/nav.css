@@ -1,5 +1,4 @@
 nav { 
-  
   height: 120px;
   color: #FFFFFF;
   background-color: #4056A1;
@@ -10,7 +9,6 @@ nav {
   z-index:999;
   top: 0;
   width: 100%; 
-
 }
 
 
@@ -47,7 +45,7 @@ nav {
 
 
 @media screen and (max-width: 768px) {
-  .nav {
+  nav {
     height: 500px;
     color: #FFFFFF;
     background-color: #d89820;
@@ -60,10 +58,10 @@ nav {
     z-index: 999;
     top: 0;
     width: 100%; 
+    
 
   }
-  .double-arrow{ 
+  .double-arrow:hover{ 
     color: #4056A1;  
   }   
 }
-  

@@ -39,21 +39,9 @@
   align-items: center;
 }
 
-@media screen and (max-width: 768px) {
-  .myHeader { display: none;  }  
-  .nav-header-splash{
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-  }
-  
-  .nav-header-user {
-    display: flex;
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #FFFFFF;  
-  }
-}
+
+
+
 /* 
 A typical breakpoint to consider for 
 desktop is 1024px and above.
