@@ -8,19 +8,15 @@
     background-image: url("/images/asfalt-dark.png");
     padding: 1.5em;
     padding-top: 50px;
-    /* padding-left: 25x;  */
-    /* padding-right: 25px;   */
     font-size: 30px;
     position: fixed;
     z-index: 999;
     top: 0;
     width: 100%; 
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
-    /* padding-top: 20px; */
+   
   }
   .double-arrow:hover{ 
     color: #4056A1;  
@@ -41,13 +37,20 @@
     display: flex;
     justify-content: space-between;
     padding-top: 80px;
+  
   }
 
   .nav-header-user {
-    display: flex;
+    /* display: flex; */
     font-family: 'Source Sans Pro', sans-serif;
     color: #FFFFFF;  
+    
   }
+
+ 
+  /* h2 {
+
+  } */
 
   .nav { display: none; }
 
