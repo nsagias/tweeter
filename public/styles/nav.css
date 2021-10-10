@@ -44,24 +44,3 @@ nav {
 }
 
 
-@media screen and (max-width: 768px) {
-  nav {
-    height: 500px;
-    color: #FFFFFF;
-    background-color: #d89820;
-    background-color: none;
-    font-family: 'Bungee', cursive;
-    background-image: url("/images/asfalt-dark.png");
-    padding: 1.5em;
-    font-size: 30px;
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    width: 100%; 
-    
-
-  }
-  .double-arrow:hover{ 
-    color: #4056A1;  
-  }   
-}
