@@ -30,11 +30,10 @@ nav {
 }
 .write2 {
   display: flex;
+  font-weight: 900;
   color: red;
   font-family: 'Source Sans Pro', sans-serif;
 }
-
-
 
 .userName {
   display: flex;
