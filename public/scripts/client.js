@@ -114,7 +114,7 @@ $(() => {
     
     if ($tweetText === "") {
       console.log('empty string');
-      alert('Please enter something')
+      // alert('Please enter something');
     }
     if ($tweetText === null) {
       console.log('null');
@@ -126,8 +126,11 @@ $(() => {
 
     $.post("/tweets", serializedData, (resp) => {
       console.log('form was submitted');
+      $("#tweet-text").val('');
+      $('#char-counter').text(0);
       loadTweets();
     });
+  
     
   });
 
