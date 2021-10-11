@@ -1,6 +1,7 @@
-.error {
+
+.error-message {
+  font-family: 'Source Sans Pro', sans-serif;
   color:red;
-}
-.error-text {
-  color:red;
+  font-weight: 1000;
+  padding-bottom: 10px;
 }
