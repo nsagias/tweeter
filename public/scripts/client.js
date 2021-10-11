@@ -63,30 +63,34 @@ $(() => {
     }
   ];
 
-
-  const createTweetElement = function (tweetData) {
-    // const userName = tweetData.user.name;
-    // const userAvatars = tweetData.user.avatars;
-    // const userHandle = tweetData.user.handle;
-    // const tweetContent = tweetData.content.text;
-    // const createdAt = tweetData.created_at;
+  /**
+   * Create jQuery template string of html elements
+   * @param {object} tweetData 
+   * @returns jQuery template string 
+   */
+  const createTweetElement = function(tweetData) {
+    const userAvatars = tweetData.user.avatars;
+    const userName = tweetData.user.name;
+    const userHandle = tweetData.user.handle;
+    const tweetContent = tweetData.content.text;
+    const createdAt = timeago.format(tweetData.created_at);
 
     let $tweet = $(`<article class="tweet">
                 <header class="tweet-header">
                   <div class="tweet-header-left">
-                    <div><img src=${tweetData.user.avatars}></div>
-                    <div>${tweetData.user.name}</div>
+                    <div><img src=${userAvatars}></div>
+                    <div>${userName}</div>
                   </div>
                   <div class="tweet-header-right">
-                    <div>${tweetData.user.handle}</div>
+                    <div>${userHandle}</div>
                   </div>
               </header>
               <div class="content">
-                <p>${tweetData.content.text}</p>
+                <p>${tweetContent}</p>
               </div>
                 <div class="tweet-footer">
                   <div class="tweet-footer-left">
-                    <div>${timeago.format(tweetData.created_at)}</div>
+                    <div>${createdAt}</div>
                   </div>
                   <div class="tweet-footer-right">
                     <div><i class="fas fa-flag"></i></div>
@@ -111,7 +115,7 @@ $(() => {
   let errorMessage = "";
 
   const $form = $("#form-new-tweet");
-  $form.submit(function (event) {
+  $form.submit(function(event) {
     // trim space spaces and escape dangerous code
     const $tweetText = $.trim($("#tweet-text").val());
     if ($tweetText === "") {
