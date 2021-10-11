@@ -115,6 +115,13 @@ $(() => {
     if ($tweetText === "") {
       console.log('empty string');
       // alert('Please enter something');
+      // $( ).click(function () {
+      //   if ( $( "div" ).first().is( ":hidden" ) ) {
+      //     $( "div" ).slideDown( "slow" );
+      //   } else {
+      //     $( "div" ).hide();
+      //   }
+      // });
     }
     if ($tweetText === null) {
       console.log('null');
@@ -123,11 +130,13 @@ $(() => {
     // serialize input 
     const serializedData = $(this).serialize();
     
+    
 
     $.post("/tweets", serializedData, (resp) => {
       console.log('form was submitted');
       $("#tweet-text").val('');
       $('#char-counter').text(0);
+      // add on the error message .hide()
       loadTweets();
     });
   
