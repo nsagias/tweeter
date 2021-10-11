@@ -23,8 +23,9 @@ $(() => {
         console.log(`There was an error: ${err}`);
       }
     });
-  }
+  };
   loadTweets();
+  
   const data = [
     {
       "user": {
@@ -60,7 +61,7 @@ $(() => {
       },
       "created_at": 1461113959089
     }
-  ]
+  ];
 
 
   const createTweetElement = function (tweetData) {
@@ -103,13 +104,13 @@ $(() => {
       let $tweet = createTweetElement(tweet);
       $('#tweets-container').prepend($tweet);
     }
-  }
+  };
 
   // start with error message hidden
-  $("#error").hide()
+  $("#error").hide();
   let errorMessage = "";
 
-  const $form = $("#form-new-tweet")
+  const $form = $("#form-new-tweet");
   $form.submit(function (event) {
     // trim space spaces and escape dangerous code
     const $tweetText = $.trim($("#tweet-text").val());
@@ -128,7 +129,7 @@ $(() => {
       $("#error").show();
     }
     event.preventDefault();
-    // serialize input 
+    // serialize input
     const serializedData = $(this).serialize();
     
     
