@@ -36,3 +36,5 @@ const data = [
     "created_at": 1461113959089
   }
 ];
+
+module.exports = {data};
