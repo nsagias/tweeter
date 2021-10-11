@@ -1,8 +1,20 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone.  
+- The app has a responsive design with the use of media queries.  
+- Users can tweet on the board and it will update right after the message is tweeted.  
+- The user can scroll down the page and then click the double arrows in the nav bar to bring the textarea box into focus
+- Provides error messages: if there is an empty tweet, greater than 140 characters or if a null value.  
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+## Final Product
+
+
+!["Full Screen View"](https://github.com/nsagias/tinyapp/blob/master/docs/full-screen.png)
+!["Full Screen View Error"](https://github.com/nsagias/tinyapp/blob/master/docs/full-screen-error.png)
+!["Responsive View Empty Textarea"](https://github.com/nsagias/tinyapp/blob/master/docs/responsive-error-empty.png)
+!["Responsive View Over 140 Characters"](https://github.com/nsagias/tinyapp/blob/master/docs/responsive-error-140.png)
+
+
 
 ## Getting Started
 
@@ -13,5 +25,12 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Dependencies
 
-- Express
+- Express 4.13.x or above
 - Node 5.10.x or above
+- Body-parser 1.15.x or above
+- Chance 1.0.x or above
+- MD5 2.1 or above
+- jQuery 3.4.x or above
+- Timeago 4.0.x or above
+
+
