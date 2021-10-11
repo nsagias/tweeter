@@ -111,8 +111,9 @@ $(() => {
     // console.log('mytweet legnth', $("#tweet-text").val().length);
     // trim space from form, pop alert 
     const $tweetText = $.trim($("#tweet-text").val());
-    
+    $('error').text('bingo')
     if ($tweetText === "") {
+     
       console.log('empty string');
       // alert('Please enter something');
       // $( ).click(function () {
