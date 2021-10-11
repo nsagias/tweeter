@@ -104,25 +104,22 @@ $(() => {
       $('#tweets-container').prepend($tweet);
     }
   }
-
-  
+  $("#error").hide()
+  let errorMessage = "";
+  errorMessage = "Character Limit is 140";
+  $("#error").show();
+  errorMessage = "";
+  $("#error").hide();
+  $("#error-words").text(errorMessage);
   const $form = $("#form-new-tweet")
   $form.submit(function (event) {
     // console.log('mytweet legnth', $("#tweet-text").val().length);
     // trim space from form, pop alert 
     const $tweetText = $.trim($("#tweet-text").val());
-    $('error').text('bingo')
     if ($tweetText === "") {
      
       console.log('empty string');
-      // alert('Please enter something');
-      // $( ).click(function () {
-      //   if ( $( "div" ).first().is( ":hidden" ) ) {
-      //     $( "div" ).slideDown( "slow" );
-      //   } else {
-      //     $( "div" ).hide();
-      //   }
-      // });
+  
     }
     if ($tweetText === null) {
       console.log('null');
@@ -138,6 +135,7 @@ $(() => {
       $("#tweet-text").val('');
       $('#char-counter').text(0);
       // add on the error message .hide()
+      $("#error-message").hide();
       loadTweets();
     });
   
