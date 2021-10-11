@@ -9,10 +9,10 @@ Tweeter is a simple, single-page Twitter clone.
 ## Final Product
 
 
-!["Full Screen View"](https://github.com/nsagias/tinyapp/blob/master/docs/full-screen.png)
-!["Full Screen View Error"](https://github.com/nsagias/tinyapp/blob/master/docs/full-screen-error.png)
-!["Responsive View Empty Textarea"](https://github.com/nsagias/tinyapp/blob/master/docs/responsive-error-empty.png)
-!["Responsive View Over 140 Characters"](https://github.com/nsagias/tinyapp/blob/master/docs/responsive-error-140.png)
+!["Full Screen View"](https://github.com/nsagias/tweeter/blob/master/docs/full-screen.png)
+!["Full Screen View Error"](https://github.com/nsagias/tweeter/blob/master/docs/full-screen-error.png)
+!["Responsive View Empty Textarea"](https://github.com/nsagias/tweeter/blob/master/docs/responsive-error-empty.png)
+!["Responsive View Over 140 Characters"](https://github.com/nsagias/tweeter/blob/master/docs/responsive-error-140.png)
 
 
 
