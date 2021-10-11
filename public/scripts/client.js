@@ -104,38 +104,44 @@ $(() => {
       $('#tweets-container').prepend($tweet);
     }
   }
+
+  // start with error message hidden
   $("#error").hide()
   let errorMessage = "";
-  errorMessage = "Character Limit is 140";
-  $("#error").show();
-  errorMessage = "";
-  $("#error").hide();
-  $("#error-words").text(errorMessage);
+
   const $form = $("#form-new-tweet")
   $form.submit(function (event) {
-    // console.log('mytweet legnth', $("#tweet-text").val().length);
-    // trim space from form, pop alert 
+    // trim space spaces and escape dangerous code
     const $tweetText = $.trim($("#tweet-text").val());
     if ($tweetText === "") {
-     
-      console.log('empty string');
-  
+      // show error if length is ""
+      errorMessage = "Text Box Is Empty Write Something";
+      console.error(errorMessage);
+      $("#error-words").text(errorMessage);
+      $("#error").show();
     }
     if ($tweetText === null) {
-      console.log('null');
+      // show error: null
+      errorMessage = "Message is returning null error";
+      console.error(errorMessage);
+      $("#error-words").text(errorMessage);
+      $("#error").show();
     }
     event.preventDefault();
     // serialize input 
     const serializedData = $(this).serialize();
     
     
-
+    // post
     $.post("/tweets", serializedData, (resp) => {
       console.log('form was submitted');
+      // reset textarea and counter to an empty string and 0 value
       $("#tweet-text").val('');
       $('#char-counter').text(0);
-      // add on the error message .hide()
+
+      // hide error message on submit
       $("#error-message").hide();
+      // reload tweets
       loadTweets();
     });
   
