@@ -39,7 +39,7 @@ $(() => {
     const tweetContent = tweetData.content.text;
     const createdAt = timeago.format(tweetData.created_at);
 
-    let $tweet = $(`<article class="tweet">
+    const $tweet = $(`<article class="tweet">
                 <header class="tweet-header">
                   <div class="tweet-header-left">
                     <div><img src=${userAvatars}></div>
@@ -69,7 +69,7 @@ $(() => {
   const renderTweets = function (tweets) {
     $('#tweets-container').empty();
     for (let tweet of tweets) {
-      let $tweet = createTweetElement(tweet);
+      const $tweet = createTweetElement(tweet);
       $('#tweets-container').prepend($tweet);
     }
   };
