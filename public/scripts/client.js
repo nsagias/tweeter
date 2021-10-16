@@ -27,8 +27,8 @@ $(() => {
 
   /**
    * Create jQuery template string of html elements
-   * @param {object} tweetData 
-   * @returns jQuery template string 
+   * @param {object} tweetData
+   * @returns jQuery template string
    */
   const createTweetElement = function(tweetData) {
     const userAvatars = tweetData.user.avatars;
@@ -64,7 +64,7 @@ $(() => {
     return $tweet;
   };
 
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     $('#tweets-container').empty();
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
