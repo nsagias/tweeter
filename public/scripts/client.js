@@ -101,7 +101,6 @@ $(() => {
     
     // post
     $.post("/tweets", serializedData, (resp) => {
-      console.log('form was submitted');
       // reset textarea and counter to an empty string and 0 value
       $("#tweet-text").val('');
       $('#char-counter').text(0);
