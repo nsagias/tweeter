@@ -9,10 +9,10 @@ $(() => {
   $("#tweet-text").on("keyup change", function() {
 
     // get textarea length in real time
-    let $charCounter = $("#tweet-text").val().length;
+    const $charCounter = $("#tweet-text").val().length;
 
     // if textarea length is greater is 140, show number as negative
-    let $charCounterGT140 = `-${$("#tweet-text").val().length - 140}`;
+    const $charCounterGT140 = `-${$("#tweet-text").val().length - 140}`;
 
     if ($charCounter > 140) {
       // set error message
