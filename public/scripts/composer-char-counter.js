@@ -35,5 +35,5 @@ const componserCharCounter = () => {
     $('#char-counter').css('color', 'black');
     $('#char-counter').text($charCounter);
   }
-}
+};
 
