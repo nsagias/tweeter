@@ -5,7 +5,7 @@
 
 $(() => {
 
-  $("#tweet-text").on("keyup change", function() {
+  $("#tweet-text").on("input", function() {
     let errorMessage = "";
 
     // get textarea length in real time
