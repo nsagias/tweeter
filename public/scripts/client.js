@@ -14,8 +14,6 @@ $(() => {
       datatype: "json",
       success: (tweetData) => {
         // tweets is an array
-        console.log("tweets", tweetData);
-        console.log("single tweet", tweetData[0]);
         const $allTweets = tweetData;
         renderTweets($allTweets);
       },
