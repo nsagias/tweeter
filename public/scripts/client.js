@@ -59,7 +59,7 @@ $(() => {
                   <div class="tweet-footer-right">
                     <div><i class="fas fa-flag"></i></div>
                     <div><i class="fas fa-retweet"></i></div>
-                    <div><i class="fas fa-heart"></i><sup>${1}</sup></div>
+                    <div><i class="fas fa-heart"></i></div>
                   </div>
               </div>
               </article>`);
