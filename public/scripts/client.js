@@ -79,6 +79,10 @@ $(() => {
   const $form = $("#form-new-tweet");
   $form.submit(function(event) {
     // trim space spaces and escape dangerous code
+    if ($tweetText > 140) {
+      event.preventDefault();
+      // counter error logics and  messages are in composer-char-counter.js
+    }
     const $tweetText = $.trim($("#tweet-text").val());
     if ($tweetText === "") {
       // show error if length is ""
@@ -86,6 +90,8 @@ $(() => {
       console.error(errorMessage);
       $("#error-words").text(errorMessage);
       $("#error").show();
+      event.preventDefault();
+      
     }
     if ($tweetText === null) {
       // show error: null
@@ -93,8 +99,9 @@ $(() => {
       console.error(errorMessage);
       $("#error-words").text(errorMessage);
       $("#error").show();
+      event.preventDefault();
     }
-    event.preventDefault();
+    
     // serialize input
     const serializedData = $(this).serialize();
     
