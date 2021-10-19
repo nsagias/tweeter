@@ -14,7 +14,7 @@ const componserCharCounter = () => {
   // if textarea length is greater is 140, show number as negative
   const $charCounterGT140 = `-${$("#tweet-text").val().length - 140}`;
 
-  if ($charCounter < 1) {
+  if ($charCounter < 0) {
     // display count greater than 140 as red
     $('#char-counter').css('color', 'red');
     $('#char-counter').text($charCounterGT140);
