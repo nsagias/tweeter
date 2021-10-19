@@ -1,7 +1,8 @@
 /**
  * Double arrow scrolls and focus on textarea
  */
-$().ready(doubleArrow);
+ $(() => {doubleArrow()});
+
 
 const doubleArrow = () => {
   $(".double-arrow").click(function() {

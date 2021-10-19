@@ -97,7 +97,6 @@ $(() => {
       $.post("/tweets", serializedData, (event) => {
     
         $("#error-message").hide();
-        // reload tweets
         $("#tweet-text").val('');
         $('#char-counter').text(140);
         loadTweets();
