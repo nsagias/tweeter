@@ -77,15 +77,15 @@ $(() => {
     if ($tweetText.length > 140) {
       errorMessage = "Character Limit is 140";
       
-      $("#error-words").text(errorMessage); 
+      $("#error-words").text(errorMessage);
       $("#error").show();
-      // counter error logics and  messages are in composer-char-counter.js
+    
     } else if ($tweetText === "") {
+
       // show error if length is ""
       errorMessage = "Text Box Is Empty Write Something";
       $("#error-words").text(errorMessage);
       $("#error").show();
-
 
     } else {
       
@@ -93,16 +93,14 @@ $(() => {
       const serializedData = $(this).serialize();
       
       // post
-      $.post("/tweets", serializedData, (event) => {
-    
-        $("#error-message").hide();
+      $.post("/tweets", serializedData, () => {
+      // set elements back to defaults
         $("#tweet-text").val('');
         $('#char-counter').text(140);
         $('#char-counter').css('color', 'black');
         loadTweets();
-        
       });
-   
+     
     }
  
   });
