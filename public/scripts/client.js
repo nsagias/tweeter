@@ -74,7 +74,7 @@ $(() => {
     event.preventDefault();
     const $tweetText = $.trim($("#tweet-text").val());
     
-    if ($tweetText > 140) {
+    if ($tweetText.length > 140) {
       errorMessage = "Character Limit is 140";
       $("#error").show();
       $("#error-words").text(errorMessage); 
@@ -83,13 +83,12 @@ $(() => {
 
     } else if ($tweetText === "") {
       // show error if length is ""
-      errorMessage = "Text Box Is Empty Write Something";
+      errorMessage = "Write Something";
       $("#error-words").text(errorMessage);
       $("#error").show();
-      return;
 
     } else {
-  
+      
       // serialize input
       const serializedData = $(this).serialize();
       
@@ -99,6 +98,7 @@ $(() => {
         $("#error-message").hide();
         $("#tweet-text").val('');
         $('#char-counter').text(140);
+        $('#char-counter').css('color', 'black');
         loadTweets();
         
       });
