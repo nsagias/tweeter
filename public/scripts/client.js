@@ -71,47 +71,41 @@ $(() => {
 
   const $form = $("#form-new-tweet");
   $form.submit(function(event) {
-    // trim space spaces and escape dangerous code
-    if ($tweetText > 140) {
-      event.preventDefault();
-      // counter error logics and  messages are in composer-char-counter.js
-    }
+    event.preventDefault();
     const $tweetText = $.trim($("#tweet-text").val());
-    if ($tweetText === "") {
+    
+    if ($tweetText > 140) {
+      errorMessage = "Character Limit is 140";
+      $("#error").show();
+      $("#error-words").text(errorMessage); 
+      // counter error logics and  messages are in composer-char-counter.js
+      return;
+
+    } else if ($tweetText === "") {
       // show error if length is ""
       errorMessage = "Text Box Is Empty Write Something";
-      console.error(errorMessage);
       $("#error-words").text(errorMessage);
       $("#error").show();
-      event.preventDefault();
-      
-    }
-    if ($tweetText === null) {
-      // show error: null
-      errorMessage = "Message is returning null error";
-      console.error(errorMessage);
-      $("#error-words").text(errorMessage);
-      $("#error").show();
-      event.preventDefault();
-    }
-    
-    // serialize input
-    const serializedData = $(this).serialize();
-    
-    
-    // post
-    $.post("/tweets", serializedData, () => {
-      // reset textarea and counter to an empty string and 0 value
-      $("#tweet-text").val('');
-      $('#char-counter').text(0);
+      return;
 
-      // hide error message on submit
-      $("#error-message").hide();
-      // reload tweets
-      loadTweets();
-    });
+    } else {
   
+      // serialize input
+      const serializedData = $(this).serialize();
+      
+      // post
+      $.post("/tweets", serializedData, (event) => {
     
+        $("#error-message").hide();
+        // reload tweets
+        $("#tweet-text").val('');
+        $('#char-counter').text(140);
+        loadTweets();
+        
+      });
+   
+    }
+ 
   });
 
 });
