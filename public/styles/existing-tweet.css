@@ -26,11 +26,7 @@
 }
 
 .tweet:hover {
-  border: 1px solid;
-  padding: 10px;
-  transition: box-shadow .05s;
-  box-shadow: 5px 5px 5px rgba(69, 69, 69, 0.5);
-
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
 }
 
 .tweet-header {
