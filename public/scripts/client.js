@@ -76,16 +76,16 @@ $(() => {
     
     if ($tweetText.length > 140) {
       errorMessage = "Character Limit is 140";
-      $("#error").show();
+      
       $("#error-words").text(errorMessage); 
+      $("#error").show();
       // counter error logics and  messages are in composer-char-counter.js
-      return;
-
     } else if ($tweetText === "") {
       // show error if length is ""
-      errorMessage = "Write Something";
+      errorMessage = "Text Box Is Empty Write Something";
       $("#error-words").text(errorMessage);
       $("#error").show();
+
 
     } else {
       
